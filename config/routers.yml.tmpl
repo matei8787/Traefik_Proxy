@@ -13,6 +13,5 @@ http:
       rule: "Host(`${OPENVPN_HOST}`)"
       entryPoints: 
         - web
-      service: noop
       middlewares:
         - redirect-to-https
