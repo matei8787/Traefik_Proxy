@@ -1,0 +1,28 @@
+
+entryPoints:
+  web:
+    address: ":80"
+  websec:
+    address: ":443"
+
+  
+providers:
+  file:
+    directory: "/dynamic"
+    watch: true
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: "${ENC_EMAIL}"
+      storage: "/acme/acme.json"
+      httpChallenge:
+        entryPoint: web
+
+log:
+  level: INFO
+  filePath: /logs/traefik.yml
+
+accessLog:
+  filePath: /logs/access.log
+  bufferingSize: 100

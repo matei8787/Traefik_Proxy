@@ -1,0 +1,7 @@
+http:
+  services:
+    ovpn-starter:
+      loadBalancer:
+        servers:
+          - url: http://${OPENVPN_IP}:${OPENVPN_PORT}
+        passHostHeader: true

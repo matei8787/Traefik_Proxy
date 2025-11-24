@@ -1,0 +1,18 @@
+http:
+  routers:
+    ovpn-router:
+      rule: "Host(`${OPENVPN_HOST}`)"
+      entryPoints: 
+        - websec
+      service: ovpn-starter
+      tls:
+        certResolver: letsencrypt
+      middlewares:
+        - redirect-to-https
+    http-redirect:
+      rule: "Host(`${OPENVPN_HOST}`)"
+      entryPoints: 
+        - webs
+      service: noop
+      middlewares:
+        - redirect-to-https
