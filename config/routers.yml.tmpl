@@ -13,6 +13,7 @@ http:
         - web
       middlewares:
         - redirect-to-https
+      service: noop
     static-router:
       rule: "Host(`${OPENVPN_HOST}`) && (PathPrefix(`/static/`) || PathPrefix(`/media/`))"
       entryPoints:
