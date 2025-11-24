@@ -12,7 +12,7 @@ http:
     http-redirect:
       rule: "Host(`${OPENVPN_HOST}`)"
       entryPoints: 
-        - webs
+        - web
       service: noop
       middlewares:
         - redirect-to-https
