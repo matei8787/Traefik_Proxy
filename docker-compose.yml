@@ -16,4 +16,4 @@ services:
       - .env
     command:
       - "--configFile=/traefik.yml"
-    entrypoint: ["/bin/bash", "/entrypoint.sh"]
+    entrypoint: ["/bin/sh", "/entrypoint.sh"]
