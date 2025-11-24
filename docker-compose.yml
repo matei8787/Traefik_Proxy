@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   traefik:
-    image: traefik:latest
+    build: .
     container_name: traefik
     restart: always
     ports:
@@ -9,9 +9,11 @@ services:
     - "443:443"
     volumes:
       - ./traefik.yml:/traefik.yml:ro
-      - ./dynamic:/dynamic:ro
+      - ./dynamic:/dynamic
+      - ./config:/config:ro
       - ./acme:/acme
       - ./logs:/logs
+      - ./entrypoint.sh:/entrypoint.sh:ro
     env_file:
       - .env
     command:

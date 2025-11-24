@@ -21,7 +21,7 @@ certificatesResolvers:
 
 log:
   level: INFO
-  filePath: /logs/traefik.yml
+  filePath: /logs/traefik.log
 
 accessLog:
   filePath: /logs/access.log

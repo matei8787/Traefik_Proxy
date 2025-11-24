@@ -1,8 +1,7 @@
 #!/bin/sh
-envsubst < dynamic/routers.yml.tmpl > dynamic/routers.yml
-envsubst < dynamic/services.yml.tmpl > dynamic/services.yml
+set -e
 
-rm dynamic/routes.yml.tmpl
-rm dynamic/services.yml.tmpl
+envsubst < config/routers.yml.tmpl > dynamic/routers.yml
+envsubst < config/services.yml.tmpl > dynamic/services.yml
 
-exec "$@"
+exec traefik "$@"
