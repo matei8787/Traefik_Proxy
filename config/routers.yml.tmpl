@@ -7,9 +7,3 @@ http:
       service: ovpn-starter
       tls:
         certResolver: letsencrypt
-    http-redirect:
-      rule: "Host(`${OPENVPN_HOST}`)"
-      entryPoints: 
-        - web
-      middlewares:
-        - redirect-to-https
