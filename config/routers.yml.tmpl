@@ -8,7 +8,7 @@ http:
       tls:
         certResolver: letsencrypt
     http-redirect:
-      rule: "Host(`${OPENVPN_HOST}`)"
+      rule: "Host(`${OPENVPN_HOST}`) && PathPrefix(`/`) && !PathPrefix(`/.well-known/acme-challenge/`)"
       entryPoints:
         - web
       middlewares:
