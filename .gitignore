@@ -1,5 +1,5 @@
 *.env*
+*acme.json*
 *logs/*
 dynamic/*
 !dynamic/middlaware.yml
-*acme.json
