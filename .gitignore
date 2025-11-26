@@ -2,3 +2,4 @@
 *logs/*
 dynamic/*
 !dynamic/middlaware.yml
+acme/*
