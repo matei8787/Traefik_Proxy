@@ -14,6 +14,7 @@ services:
       - ./acme:/acme
       - ./logs:/logs
       - ./entrypoint.sh:/entrypoint.sh:ro
+      - ./certs:/certs:ro
     env_file:
       - .env
     command:
