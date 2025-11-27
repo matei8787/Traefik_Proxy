@@ -10,7 +10,7 @@ http:
     nginx-static:
       loadBalancer:
         servers:
-          - url: http://${OPENVPN_IP}:80
+          - url: https://${OPENVPN_IP}:80
         passHostHeader: true
         serversTransport: internal-transport
 
