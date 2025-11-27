@@ -12,11 +12,13 @@ http:
         servers:
           - url: http://${OPENVPN_IP}:80
         passHostHeader: true
+        serversTransport: internal-transport
 
     noop:
       loadBalancer:
         servers:
           - url: "http://127.0.0.1"
+
 
 serversTransport:
   internal-transport:
