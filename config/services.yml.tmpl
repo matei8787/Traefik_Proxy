@@ -3,7 +3,7 @@ http:
     ovpn-starter:
       loadBalancer:
         servers:
-          - url: http://${OPENVPN_IP}:${OPENVPN_PORT}
+          - url: https://${OPENVPN_IP}:${OPENVPN_PORT}
         passHostHeader: true
         serversTransport: internal-transport
 
