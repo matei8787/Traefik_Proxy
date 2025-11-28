@@ -1,7 +1,7 @@
 http:
   routers:
     ovpn-router:
-      rule: "Host(`${OPENVPN_HOST}`) && !(PathPrefix(`/static/`) || PathPrefix(`/media/`))"
+      rule: "Host(`${OPENVPN_HOST}`)"
       entryPoints: 
         - websec
       service: ovpn-starter
@@ -14,9 +14,4 @@ http:
       middlewares:
         - redirect-to-https
       service: noop
-    static-router:
-      rule: "Host(`${OPENVPN_HOST}`) && (PathPrefix(`/static/`) || PathPrefix(`/media/`))"
-      entryPoints:
-        - websec
-      service: nginx-static
       
