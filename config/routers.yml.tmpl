@@ -7,6 +7,11 @@ http:
       service: ovpn-starter
       tls:
         certResolver: letsencrypt
+      middlewares:
+        - headers
+        - ratelimit
+        - secure-headers
+
     http-redirect:
       rule: "Host(`${OPENVPN_HOST}`) && PathPrefix(`/`) && !PathPrefix(`/.well-known/acme-challenge/`)"
       entryPoints:
