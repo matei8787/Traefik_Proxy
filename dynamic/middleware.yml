@@ -16,7 +16,3 @@ http:
       rateLimit:
         average: 10
         burst: 20
-    headers:
-      forwardedHeaders:
-        trustedIPs:
-          - "0.0.0.0/0"
